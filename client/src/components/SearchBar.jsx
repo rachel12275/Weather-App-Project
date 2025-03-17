@@ -7,24 +7,28 @@ const SearchBar = () => {
   const [city, setCityInput] = useState('');
   const [data, setData] = useState(null);
   const [times, setTimes] = useState(null);
-
+  const [errors, setErrors] = useState("");
   const handleChange = (e) => {
     setCityInput(e.target.value);
   };
 
-  const check = (e) => {
+  const handleCheck = (e) => {
     e.preventDefault();
+    setErrors("");
     fetchWeather(city)
       .then(res => {
         setData(res.data);
-        console.log(res.data);
         setTimes(res.times);
-        console.log(res.times);
       })
       .catch(err => {
         console.log(err.message);
-        alert("שגיאה בכתיבת עיר");
+        setErrors("Wrong city name. Please try again.");
       })
+  };
+  const formatDateTime = (dateTime) => {
+    const [date, time] = dateTime.split(" ");
+    const [year, month, day] = date.split("-");
+    return `${day}/${month}/${year.slice(-2)} at ${time}`;
   };
 
   return (
@@ -41,29 +45,25 @@ const SearchBar = () => {
             type="text"
             value={city}
             onChange={handleChange}
-            onKeyDown={(e) => e.key === "Enter" && check(e)}
+            onKeyDown={(e) => e.key === "Enter" && handleCheck(e)}
             aria-label="City name input"
           />
-          <button onClick={check} aria-label="Search for weather">Check</button>
+          <button onClick={handleCheck} aria-label="Search for weather">Check</button>
         </div>
-
+        {errors && <p className="error">{errors}</p>}
       </div>
       <div className="weather">
-        <WeatherCard data={data} times={times} />
+        <WeatherCard data={data} times={times} formatDateTime={formatDateTime} />
       </div>
-      {data ? (
+      {data && (
         <div className="location-container">
           <p className="latitude">Latitude {data?.location?.lat ?? "Loading..."}</p>
           <p className="longitude">Longitude {data?.location?.lon ?? "Loading..."}</p>
           <p className="accurate">Accurate to  {data?.current?.last_updated
-            ? (() => {
-              const [date, time] = data.current.last_updated.split(" ");
-              const [year, month, day] = date.split("-");
-              return `${day}/${month}/${year.slice(-2)} at ${time}`;
-            })()
+            ? formatDateTime(data.current.last_updated)
             : "Loading..."}</p>
         </div>
-      ) : (null)}
+      )}
     </div>
   );
 };

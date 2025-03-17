@@ -1,6 +1,6 @@
 import '../styles/weatherCard.css';
 
-const WeatherCard = ({ data, times }) => {
+const WeatherCard = ({ data, times, formatDateTime }) => {
 
   return (
     <>
@@ -11,11 +11,7 @@ const WeatherCard = ({ data, times }) => {
               <p>{data.location.name}</p>
               <p>{data.location.country}</p>
               <p>
-                {(() => {
-                  const [date, time] = data.location.localtime.split(" ");
-                  const [year, month, day] = date.split("-");
-                  return `${day}/${month}/${year.slice(-2)} at ${time}`;
-                })()}
+                {formatDateTime(data.location.localtime)}
               </p>
             </div>
             <div className="temperature-container">

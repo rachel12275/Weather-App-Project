@@ -37,6 +37,7 @@ label {
   letter-spacing: 0px;
   color: #707070;
 }
+
 /* כפתור CHACK */
 button {
   position: absolute;
@@ -61,6 +62,7 @@ button:hover {
   /* background: #03522E; */
   transform: scale(1.1);
 }
+
 /* הכנסת עיר */
 input {
   position: absolute;
@@ -79,6 +81,14 @@ input {
   color: #363636;
   opacity: 1;
 
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font: normal normal normal 1vw/4.2vh Heebo, sans-serif;
+  top:60vh;
+  left: 8.4vw;
 }
 
 /* עיצוב תצוגת המיקום */
@@ -154,7 +164,7 @@ input {
   button {
     left: 67.5vw;
     width: 13.8vw;
-    height: 4.7vh;
+    height: 4.2vh;
     font: normal normal 300 2.6vw/3.5vh Heebo, sans-serif;
   }
 
@@ -164,6 +174,10 @@ input {
     width: 63vw;
     height: 8.2vh;
     font: normal normal normal 3.2vw/4.2vh Heebo, sans-serif;
+  }
+  .error {
+    left: 23vw;
+    font: normal normal normal 1.7vw/4.2vh Heebo, sans-serif;
   }
 
   .latitude {
@@ -232,5 +246,8 @@ input {
     height: 6.1vh;
     /* font */
     font: normal normal normal 3.2vw/4.4vh Heebo, sans-serif;
+  }
+  .error {
+    top:48vh;
   }
 }

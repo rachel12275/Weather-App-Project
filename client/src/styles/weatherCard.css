@@ -81,8 +81,8 @@
 
 /* עיצוב של הטמפרטורה */
 .temperature-container p:first-child {
-    font: normal normal 500 9.5vw/15.9vh Heebo;
-    letter-spacing: -1vw;
+    font: normal normal 500 8.5vw/15.9vh Heebo;
+    letter-spacing: -0.7vw;
     color: #FFFFFF;
     margin: 0;
     margin-bottom: 0;
@@ -211,11 +211,11 @@
 
     .weather-detail p:last-child {
 
-        font: normal normal medium 2.8vw/3.9vh Heebo;
+        font: normal normal 500 2.8vw/3.9vh Heebo;
     }
 
     .instructions {
-        font: normal normal 700 2.8vw/3.9vh Heebo;
+        font: normal normal 700 3.8vw/3.9vh Heebo;
     }
 
     .weather-times {
@@ -232,17 +232,18 @@
     }
 
     .weather-times div p:last-child {
-        font: normal normal medium 2.6vw/5.8vh Heebo;
+       
+        font: normal normal 500 2.6vw/3vh Heebo;
     }
 }
 
 @media (max-width: 470px) {
     .outer-container {
-        height: 70vh;
+        height: 75vh;
     }
 
     .weather-container {
-        height: 55vh;
+        height: 60vh;
     }
 
     .temperature-container p:first-child {
