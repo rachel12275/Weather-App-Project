@@ -1,9 +1,9 @@
 # Weather App ☂️⛅☀️  
 
-## תיאור הפרויקט  
-אפליקציה לחיזוי מזג האוויר בזמן אמת לפי שם עיר.  
-הפרויקט מבוסס על **React** בצד הלקוח ו-**Node.js** בצד השרת.  
-האפליקציה מציגה את מזג האוויר הנוכחי, טמפרטורות לשעות הקרובות והשוואה לשעות קודמות.  
+## Project Description  
+A real-time weather forecasting app based on the city name.  
+The project is built using **React** on the client-side and **Node.js** on the server-side.  
+The app displays the current weather, upcoming temperature predictions, and a comparison with previous hours.
 
 ## טכנולוגיות   
 - **Frontend:** React, Vite  
@@ -12,33 +12,33 @@
 - **API:** WeatherAPI  
 - **Request Library:** Axios  
 - **Environment Variables:** dotenv  
-- **CORS:** מאפשר בקשות בין צד השרת לצד הלקוח  
+- **CORS:** Enables requests between the server and client-side  
 
-## כיצד להשתמש?   
+## How to Use?  
 
-### צד הלקוח  
-1. הזן את שם העיר בתיבת הטקסט.  
-2. לאחר שליחה, תוצג הטמפרטורה של מזג האוויר הנוכחי בעיר המבוקשת.  
-3. האפליקציה מציגה גם את הטמפרטורות לשעה הקרובה והשוואה למזג האוויר בשעות קודמות.  
+### Client-side  
+1. Enter the city name in the text box.  
+2. After submission, the current weather temperature of the requested city will be displayed.  
+3. The app also shows temperatures for the upcoming hour and compares them with previous weather conditions.  
 
-### צד השרת  
-השרת מקבל בקשות `GET` לנתיב:  
+### Server-side  
+The server accepts `GET` requests at the following endpoint:   
 
 ```
 /weather/:city
 ```
 
-כאשר `city` הוא שם העיר.  
+Where `city` is the name of the city.  
 
-לדוגמה, בקשה לעיר **Tel Aviv**:  
+For example, a request for the city **Tel Aviv**:  
 
 ```
 GET /weather/Tel Aviv
 ```
 
-## איך להריץ את הפרויקט?   
+## How to Run the Project?  
 
-### 1️⃣ התקנת התלויות  
+### 1️⃣ Install Dependencies  
 ```sh
 cd client  
 npm install  
@@ -47,35 +47,37 @@ cd ../server
 npm install  
 ```
 
-### 2️⃣ הגדרת מפתחות API  
-הפרויקט דורש **מפתח API** כדי להתחבר ל-WeatherAPI.  
+### 2️⃣ Set up API Keys  
+The project requires an **API Key** to connect to WeatherAPI.  
 
-- הירשם לחשבון ב-WeatherAPI.  
-- הוסף את המפתח שלך לקובץ `.env` בתיקיית השרת:  
+- Sign up for an account on WeatherAPI.  
+- Add your key to the `.env` file in the server folder:  
 
 ```sh
 API_KEY=YOUR_API_KEY
 ```
 
-### 3️⃣ הרצת הפרויקט  
-פתח שני טרמינלים:  
+### 3️⃣ Running the Project  
+Open two terminals:  
 
-**טרמינל ראשון (שרת):**  
+**First Terminal (Server):**  
 ```sh
 cd server  
 node server.js  
 ```
 
-**טרמינל שני (לקוח):**  
+**Second Terminal (Client):**  
 ```sh
 cd client  
 npm run dev  
 ```
-## נראות סופית
-![Alt text](image.png)
+## Screenshot
+![Large screen](Screenshot-images/image.png)
 
-![Alt text](image-1.png)
+![Large screen](Screenshot-images/image-1.png)
 
-![Alt text](image-6.png)
+![Small screen](Screenshot-images/image-2.png)
 
-![Alt text](image-7.png)
+![Small screen](Screenshot-images/image-3.png)
+
+
