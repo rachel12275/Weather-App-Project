@@ -5,7 +5,7 @@ A real-time weather forecasting app based on the city name.
 The project is built using **React** on the client-side and **Node.js** on the server-side.  
 The app displays the current weather, upcoming temperature predictions, and a comparison with previous hours.
 
-## טכנולוגיות   
+## Technologies  
 - **Frontend:** React, Vite  
 - **Backend:** Node.js, Express  
 - **State Management:** React Hooks  
